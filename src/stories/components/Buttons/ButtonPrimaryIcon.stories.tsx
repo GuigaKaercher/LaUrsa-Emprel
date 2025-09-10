@@ -38,7 +38,6 @@ export const Default: Story = {
   args: {
     children: 'Button Label',
     loading: false,
-    disabled: false,
   },
 };
 
@@ -46,14 +45,5 @@ export const Loading: Story = {
   args: {
     children: 'Button Label',
     loading: true,
-    disabled: false,
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    children: 'Button Label',
-    loading: false,
-    disabled: true,
   },
 };

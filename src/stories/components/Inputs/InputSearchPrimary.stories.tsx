@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputSearchPrimary } from '../../../components/inputs/inputSeachPrimary';
+import InputSearchPrimary from '../../../components/inputs/inputSeachPrimary';
 
 const meta = {
   title: 'Inputs/InputSearchPrimary',
@@ -9,15 +9,19 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    disabled: {
-      control: 'boolean',
-      description: 'Disabled state of the input',
-      defaultValue: false,
-    },
     placeholder: {
       control: 'text',
       description: 'Placeholder text',
       defaultValue: 'Que serviço você procura?',
+    },
+    value: {
+      control: 'text',
+      description: 'Current value of the input',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Disabled state of the input',
+      defaultValue: false,
     },
   },
 } satisfies Meta<typeof InputSearchPrimary>;
@@ -27,12 +31,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    disabled: false,
+    placeholder: 'Que serviço você procura?',
   },
 };
 
-export const Disabled: Story = {
+export const WithValue: Story = {
   args: {
-    disabled: true,
+    placeholder: 'Que serviço você procura?',
+    value: 'Desenvolvimento web',
   },
 };

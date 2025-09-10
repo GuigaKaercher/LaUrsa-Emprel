@@ -16,6 +16,7 @@ const meta = {
     disabled: {
       control: 'boolean',
       description: 'Whether the checkbox is disabled',
+      defaultValue: false,
     },
     label: {
       control: 'text',
@@ -41,62 +42,7 @@ type Story = StoryObj<typeof meta>;
 export const Regular: Story = {
   args: {
     checked: false,
-    disabled: false,
     label: 'Regular',
-  },
-};
-
-export const Hover: Story = {
-  args: {
-    checked: false,
-    disabled: false,
-    label: 'Hover',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Estado hover com borda azul (#1474FF)',
-      },
-    },
-  },
-};
-
-export const Selected: Story = {
-  args: {
-    checked: true,
-    disabled: false,
-    label: 'Selected',
-  },
-};
-
-export const SelectedHover: Story = {
-  args: {
-    checked: true,
-    disabled: false,
-    label: 'Selected hover',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Estado selected hover com cor mais escura (#0F57BF)',
-      },
-    },
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    checked: false,
-    disabled: true,
-    label: 'Disabled',
-  },
-};
-
-export const DisabledSelected: Story = {
-  args: {
-    checked: true,
-    disabled: true,
-    label: 'Disabled selected',
   },
 };
 

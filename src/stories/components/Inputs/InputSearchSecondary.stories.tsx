@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputSearchSecondary } from '../../../components/inputs/inputSearchSecondary';
+import InputSearchSecondary from '../../../components/inputs/inputSearchSecondary';
 
 const meta = {
   title: 'Inputs/InputSearchSecondary',
@@ -9,15 +9,19 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    disabled: {
-      control: 'boolean',
-      description: 'Disabled state of the input',
-      defaultValue: false,
-    },
     placeholder: {
       control: 'text',
       description: 'Placeholder text',
       defaultValue: 'Pesquisar...',
+    },
+    value: {
+      control: 'text',
+      description: 'Current value of the input',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Disabled state of the input',
+      defaultValue: false,
     },
   },
 } satisfies Meta<typeof InputSearchSecondary>;
@@ -27,12 +31,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    disabled: false,
+    placeholder: 'Pesquisar...',
   },
 };
 
-export const Disabled: Story = {
+export const WithValue: Story = {
   args: {
-    disabled: true,
+    placeholder: 'Pesquisar...',
+    value: 'Texto de pesquisa',
   },
 };

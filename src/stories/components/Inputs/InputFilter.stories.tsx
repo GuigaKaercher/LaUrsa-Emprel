@@ -44,7 +44,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     placeholder: 'Pesquisar...',
-    disabled: false,
   },
 };
 
@@ -52,41 +51,5 @@ export const WithValue: Story = {
   args: {
     placeholder: 'Pesquisar...',
     value: 'Texto de exemplo',
-    disabled: false,
-  },
-};
-
-export const Focused: Story = {
-  args: {
-    placeholder: 'Pesquisar...',
-    disabled: false,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Estado focado com borda azul (#1474FF)',
-      },
-    },
-  },
-};
-
-export const Hover: Story = {
-  args: {
-    placeholder: 'Pesquisar...',
-    disabled: false,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Estado hover com borda escura (#1B2029)',
-      },
-    },
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    placeholder: 'Pesquisar...',
-    disabled: true,
   },
 };

@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { ButtonPrimary } from './components/buttons/ButtonPrimary';
 import { ButtonPrimaryIcon } from './components/buttons/ButtonPrimaryIcon';
 import { ButtonSecondary } from './components/buttons/ButtonSecondary';
@@ -7,9 +8,14 @@ import {AvatarImg} from './components/avatars/AvatarImg'
 import InputSearchPrimary from './components/inputs/inputSeachPrimary';
 import InputSearchSecondary from './components/inputs/inputSearchSecondary';
 import InputFilter from './components/inputs/inputFilter';
+import Checkbox from './components/selections/Checkbox';
+import Radio from './components/selections/Radio';
 
 
 function App() {
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(true);
+  const [selectedRadio, setSelectedRadio] = useState('option2');
   return (
     <div className="p-8 space-y-4">
       <h1 className="text-2xl font-bold mb-6">
@@ -147,6 +153,62 @@ function App() {
             <div>
               <p className="text-sm text-gray-600 mb-2">InputFilter - Disabled:</p>
               <InputFilter disabled/>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-8">
+          <h2 className="text-xl font-bold mb-4">Selection Components</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <p className="text-sm text-gray-600 mb-2">Checkbox - Default:</p>
+              <Checkbox 
+                label="Checkbox Option" 
+                checked={checkbox1}
+                onChange={setCheckbox1}
+              />
+            </div>
+            
+            <div>
+              <p className="text-sm text-gray-600 mb-2">Checkbox - Checked:</p>
+              <Checkbox 
+                label="Checked Option" 
+                checked={checkbox2}
+                onChange={setCheckbox2}
+              />
+            </div>
+            
+            <div>
+              <p className="text-sm text-gray-600 mb-2">Checkbox - Disabled:</p>
+              <Checkbox label="Disabled Option" checked disabled />
+            </div>
+            
+            <div className="mt-6">
+              <p className="text-sm text-gray-600 mb-2">Radio Buttons:</p>
+              <div className="space-y-2">
+                <Radio 
+                  name="option" 
+                  value="option1" 
+                  label="Option 1" 
+                  checked={selectedRadio === 'option1'}
+                  onChange={setSelectedRadio}
+                />
+                <Radio 
+                  name="option" 
+                  value="option2" 
+                  label="Option 2" 
+                  checked={selectedRadio === 'option2'}
+                  onChange={setSelectedRadio}
+                />
+                <Radio 
+                  name="option" 
+                  value="option3" 
+                  label="Option 3 (Disabled)" 
+                  checked={selectedRadio === 'option3'}
+                  disabled 
+                />
+              </div>
             </div>
           </div>
         </div>

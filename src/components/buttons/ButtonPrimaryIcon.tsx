@@ -111,7 +111,7 @@ const ButtonPrimaryIcon = React.forwardRef<HTMLButtonElement, ButtonPrimaryIconP
       >
         {loading ? (
           <div
-            style={{
+              style={{
               width: '20px',
               height: '20px',
               border: '2px solid white',
